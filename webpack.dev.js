@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: "development", //Explicitly set webpack to bundle without minification
   //devtool: "none", //Explicitly tell webpack to export same code that is in them codefiles
   output: {
-    filename: "main.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   }
 });
