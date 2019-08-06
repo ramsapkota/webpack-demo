@@ -9,5 +9,22 @@ module.exports = merge(common, {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/template.html"
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // Th ird injects css-javascript into dom
+          "css-loader", // Second converts css into commonjs
+          "sass-loader" //First converts sass into css
+        ]
+      }
+    ]
   }
 });

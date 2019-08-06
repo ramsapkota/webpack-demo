@@ -5,21 +5,8 @@ module.exports = {
     main: "./src/index.js",
     vendor: "./src/vendor.js"
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/template.html"
-    })
-  ],
   module: {
     rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          "style-loader", // Th ird injects css-javascript into dom
-          "css-loader", // Second converts css into commonjs
-          "sass-loader" //First converts sass into css
-        ]
-      },
       {
         test: /\.html$/,
         use: ["html-loader"]
